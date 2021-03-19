@@ -5,15 +5,15 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637517510586784033
-    m_Hash: 3856877152
+      ticks: 637517603859957896
+    m_Hash: 3331976522
   m_LockFileStatus:
     m_FilePath: C:/Users/kopyt/LNU-Team-Work-2021/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637517510776731929
+      ticks: 637517604981717585
     m_Hash: 4123132595
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
