@@ -6,7 +6,7 @@ public class MouseLook : MonoBehaviour
     [SerializeField] private Transform playerBody;
 
     float xRotation = 0f;
-
+    
     // Start is called before the first frame update
     void Start()
     {
