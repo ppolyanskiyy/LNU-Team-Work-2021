@@ -2294,7 +2294,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880909558}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.8041382, y: -1.8674512, z: 0.75621605}
+  m_LocalPosition: {x: -2.19, y: -2.18, z: 0.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 459166173}
@@ -3084,7 +3084,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1023235356}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.208138, y: 2.9, z: 2.0072155}
+  m_LocalPosition: {x: -10.15, y: 1.76, z: 2.0072155}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 459166173}
@@ -3431,15 +3431,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 61d230b7632ed3f4680c908291e1eeb8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27.61
+      value: 26.51
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 61d230b7632ed3f4680c908291e1eeb8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.54
+      value: 2.89
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 61d230b7632ed3f4680c908291e1eeb8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -16.33
+      value: -14.73
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 61d230b7632ed3f4680c908291e1eeb8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3587,9 +3587,9 @@ MonoBehaviour:
   controller: {fileID: 1224966894}
   speed: 5
   gravity: -9.81
-  jumpHeight: 2
+  jumpHeight: 1.5
   groundCheck: {fileID: 2015776218}
-  groundDistance: 0
+  groundDistance: 0.1
   groundMask:
     serializedVersion: 2
     m_Bits: 64
@@ -3661,7 +3661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f18a91e94b5f96449bec3a8988cb10a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 300
+  mouseSensitivity: 1000
   playerBody: {fileID: 1224966896}
 --- !u!81 &1288587196
 AudioListener:
@@ -3742,7 +3742,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1369425815}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.938138, y: 4.738, z: 6.076}
+  m_LocalPosition: {x: -13.938138, y: 2.84, z: 2.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 459166173}
@@ -4567,7 +4567,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15896
+  m_Name: pb_Mesh15920
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4731,7 +4731,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15874
+  m_Name: pb_Mesh15878
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

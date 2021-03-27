@@ -5,12 +5,14 @@ public class MouseLook : MonoBehaviour
     [SerializeField] private float mouseSensitivity = 550f;
     [SerializeField] private Transform playerBody;
 
+    Animator animator;
     float xRotation = 0f;
     
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
