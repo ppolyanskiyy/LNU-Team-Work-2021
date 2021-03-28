@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
     Animator animator;
+    float timeInAir = 0.0f;
 
     void Start()
     {
@@ -35,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
             if (x == 0 && z == 0)
             {
                 animator.SetBool("StayRotationX", true);
-                float mouseX = Input.GetAxis("Mouse X") * 1000f * Time.deltaTime;
+                float mouseX = Input.GetAxis("Mouse X") * 100f * Time.deltaTime;
                 animator.SetFloat("VelocityX", mouseX, 0.1f, Time.deltaTime);
             }
             else if (x != 0 || z != 0 || (x != 0 && z != 0))
@@ -52,15 +53,21 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
+            timeInAir = 0.0f;
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             animator.SetInteger("Jumping", 2);
         }
         else if (!isGrounded)
         {
-            animator.SetInteger("Jumping", 1);
+            timeInAir += Time.deltaTime;
+            if (timeInAir > 0.4f)
+            {
+                animator.SetInteger("Jumping", 1);
+            }
         }
         else
         {
+            timeInAir = 0.0f;
             animator.SetInteger("Jumping", 0);
         }
     }
