@@ -4,7 +4,6 @@ public class WeaponSwitching : MonoBehaviour
 {
     public int selectedWeapon = 0;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +13,6 @@ public class WeaponSwitching : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         int previousSelectedWeapon = selectedWeapon;
 
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)

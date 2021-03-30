@@ -311,7 +311,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3832703582600944448, guid: bceefb2a39f6db74d9bc9d006687b7f1, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3832703582600944448, guid: bceefb2a39f6db74d9bc9d006687b7f1, type: 3}
       propertyPath: m_LocalScale.x
@@ -367,7 +367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3832703582600972128, guid: bceefb2a39f6db74d9bc9d006687b7f1, type: 3}
       propertyPath: m_Name
-      value: SecondaryGun
+      value: MainGun
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bceefb2a39f6db74d9bc9d006687b7f1, type: 3}
@@ -393,10 +393,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c04bcf157d359440885788f22e45e75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 4
+  damage: 5
   range: 50
   fireRate: 5
   impactForce: 20
+  maxAmmo: 20
+  reloadTime: 3
+  Automatic: 0
   fpsCam: {fileID: 1288587197}
   muzzleFlash: {fileID: 1075759313}
   impactEffect: {fileID: 4500320693024229687, guid: 8142e6473b9b40943a2de3cffbdb7d03, type: 3}
@@ -426,6 +429,9 @@ MonoBehaviour:
   range: 100
   fireRate: 15
   impactForce: 30
+  maxAmmo: 30
+  reloadTime: 2
+  Automatic: 1
   fpsCam: {fileID: 1288587197}
   muzzleFlash: {fileID: 980541067}
   impactEffect: {fileID: 4500320693024229687, guid: 8142e6473b9b40943a2de3cffbdb7d03, type: 3}
@@ -2402,11 +2408,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 101050, guid: 2c3055a11cb8f8540a181490a4c34b7c, type: 3}
       propertyPath: m_Name
-      value: MainGun
+      value: SecondaryGun
       objectReference: {fileID: 0}
     - target: {fileID: 457962, guid: 2c3055a11cb8f8540a181490a4c34b7c, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 457962, guid: 2c3055a11cb8f8540a181490a4c34b7c, type: 3}
       propertyPath: m_LocalScale.x
@@ -13239,7 +13245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 61d230b7632ed3f4680c908291e1eeb8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.89
+      value: 2.08
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 61d230b7632ed3f4680c908291e1eeb8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13870,15 +13876,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1395928181}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.00008726013, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 438470669}
   - {fileID: 293681568}
+  - {fileID: 438470669}
   m_Father: {fileID: 1288587194}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.01, y: 0, z: 0}
 --- !u!114 &1395928183
 MonoBehaviour:
   m_ObjectHideFlags: 0
