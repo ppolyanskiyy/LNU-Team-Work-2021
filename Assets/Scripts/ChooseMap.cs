@@ -12,7 +12,7 @@ public class ChooseMap : MonoBehaviour
     private int levelComplete;
 
 
-    // Start is called before the first frame update
+
     void Start()
     {
         levelComplete = PlayerPrefs.GetInt("levelComplete");
@@ -31,9 +31,14 @@ public class ChooseMap : MonoBehaviour
                 break;
         }
     }
-    public void LoadTo(int level)
+    public void LoadTo(string nameLevel)
     {
-        SceneManager.LoadScene(level);
+        SceneTransition.SwitchToScene(nameLevel);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 
 }
