@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded;
     Animator animator;
     float timeInAir = 0.0f;
+    float timeAfterGround = 0.0f;
+    float waitAfterGround = 0.25f;
 
     void Start()
     {
@@ -51,8 +53,9 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded && timeAfterGround > waitAfterGround)
         {
+            timeAfterGround = 0.0f;
             timeInAir = 0.0f;
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             animator.SetInteger("Jumping", 2);
@@ -67,6 +70,14 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            if (timeAfterGround < waitAfterGround)
+            {
+                timeAfterGround += Time.deltaTime;
+            }
+            else
+            {
+                timeAfterGround = waitAfterGround + 0.1f;
+            }
             timeInAir = 0.0f;
             animator.SetInteger("Jumping", 0);
         }

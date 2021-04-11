@@ -107,9 +107,9 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
+  - m_ConditionMode: 7
     m_ConditionEvent: Jumping
-    m_EventTreshold: 1
+    m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8723066527220430671}
   m_Solo: 0
@@ -419,9 +419,6 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: 8723066527220430671}
     m_Position: {x: 30, y: 490, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -5934738250865387929}
-    m_Position: {x: 65, y: 555, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
