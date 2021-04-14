@@ -11,8 +11,6 @@ public class ChooseMap : MonoBehaviour
     public Button map3;
     private int levelComplete;
 
-
-
     void Start()
     {
         levelComplete = PlayerPrefs.GetInt("levelComplete");
@@ -40,5 +38,4 @@ public class ChooseMap : MonoBehaviour
     {
         Application.Quit();
     }
-
 }

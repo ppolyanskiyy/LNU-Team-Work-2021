@@ -13,14 +13,10 @@ public class Pause : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if (gameIsPaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Paused();
-            }
+            if (gameIsPaused)            
+                Resume();            
+            else            
+                Paused();            
         }
     }
 
