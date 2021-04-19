@@ -138,7 +138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &47201398
 RectTransform:
   m_ObjectHideFlags: 0
@@ -179,7 +179,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &219943186
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1033,10 +1033,10 @@ RectTransform:
   m_Father: {fileID: 47201398}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 1019.4, y: -285}
-  m_SizeDelta: {x: 394.471, y: 96.52}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 223}
+  m_SizeDelta: {x: 394.47095, y: 96.52002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1197163540
 Animator:
@@ -1046,7 +1046,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1197163538}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 65ca7be5de1609245ae950711ed5e6d7, type: 2}
   m_CullingMode: 0
@@ -1933,7 +1933,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: FirstLevel
+          m_StringArgument: FirstLevel_WeaponSystem
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1770046532
