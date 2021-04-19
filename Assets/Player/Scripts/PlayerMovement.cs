@@ -28,24 +28,38 @@ public class PlayerMovement : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
+        
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
+        //if (isGrounded)
+        //{
+        //    if (x == 0 && z == 0)
+        //    {
+        //        animator.SetBool("StayRotationX", true);
+        //        float mouseX = Input.GetAxis("Mouse X") * 100f * Time.deltaTime;
+        //        animator.SetFloat("VelocityX", mouseX, 0.1f, Time.deltaTime);
+        //    }
+        //    else if (x != 0 || z != 0 || (x != 0 && z != 0))
+        //    {
+        //        animator.SetBool("StayRotationX", false);
+        //        animator.SetFloat("VelocityX", x, 0.1f, Time.deltaTime);
+        //        animator.SetFloat("VelocityZ", z, 0.1f, Time.deltaTime);
+        //    }
+        //}
         if (isGrounded)
         {
             if (x == 0 && z == 0)
             {
-                animator.SetBool("StayRotationX", true);
                 float mouseX = Input.GetAxis("Mouse X") * 100f * Time.deltaTime;
                 animator.SetFloat("VelocityX", mouseX, 0.1f, Time.deltaTime);
+                animator.SetFloat("VelocityZ", 0f, 0.1f, Time.deltaTime);
             }
-            else if (x != 0 || z != 0 || (x != 0 && z != 0))
+            else
             {
-                animator.SetBool("StayRotationX", false);
-                animator.SetFloat("VelocityX", x, 0.1f, Time.deltaTime);
                 animator.SetFloat("VelocityZ", z, 0.1f, Time.deltaTime);
+                animator.SetFloat("VelocityX", x, 0.1f, Time.deltaTime);
             }
         }
         Vector3 move = transform.right * x + transform.forward * z;
