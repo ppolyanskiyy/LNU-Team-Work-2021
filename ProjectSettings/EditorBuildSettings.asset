@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/UI/Menu.unity
     guid: 49ee23ec61910664885cfde76232c69c
   - enabled: 1
-    path: Assets/Scenes/FirstLevel.unity
+    path: Assets/EnemyAi (Project file) woLibrary/Assets/Scenes/SingleTap,DoubleTap,KeyHold.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}
