@@ -268,10 +268,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "- New Features\r\n  o Added \"What's new\" button in Main menu\n  o Added
-    connection logging while player is connecting\n  o Added animation while player
-    is connecting\n\n- Fixed Bugs\r\n  o Can't Leave room after lose in proper way\n\n-
-    Changes\r\n  o All scripts rewrited"
+  m_Text: "- New Features\r\n  o Story and multiplayer online mode combined\n\n-
+    Fixed Bugs\r\n  o \n\n- Changes\r\n  o "
 --- !u!222 &127703580
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -882,7 +880,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Build v.0.4
+  m_Text: Multiplayer online mode v.0.5
 --- !u!222 &2037981258
 CanvasRenderer:
   m_ObjectHideFlags: 0

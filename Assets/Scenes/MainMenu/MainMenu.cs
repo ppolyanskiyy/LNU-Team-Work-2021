@@ -5,24 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void PlayGame()
+    public void StoryMode()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("LevelChoose");
+    }
+
+    public void MultiplayerOnlineMode()
+    {
+        SceneManager.LoadScene("Launcher");
     }
 
     public void QuitGame()
     {
-        Debug.Log("Quit game.");
+        Debug.Log("Quiting game...");
         Application.Quit();
     }
 
     public void BackToMainMenu()
     {
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void WhatsNew()
     {
-        SceneManager.LoadScene("What\'s new");
+        SceneManager.LoadScene("WhatsNew");
     }
 }
