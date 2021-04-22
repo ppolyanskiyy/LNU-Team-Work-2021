@@ -85,8 +85,7 @@ namespace Com.MyCompany.MyGame
 			// "back" button of phone equals "Escape". quit app if that's pressed
 			if (Input.GetKeyDown(KeyCode.Escape))
 			{
-
-				GameManager.Instance.LeaveRoom();
+				Cursor.lockState = CursorLockMode.None;
 			}
 		}
 
@@ -145,7 +144,7 @@ namespace Com.MyCompany.MyGame
 
 		public void QuitApplication()
 		{
-			Application.Quit();
+			Cursor.lockState = CursorLockMode.None;
 		}
 
 		#endregion

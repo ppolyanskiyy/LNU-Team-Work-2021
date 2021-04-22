@@ -3,72 +3,111 @@ using UnityEngine;
 
 using Photon.Pun;
 
-namespace Com.MyCompany.MyGame
+public class PlayerAnimatorManager : MonoBehaviourPun
 {
-	public class PlayerAnimatorManager : MonoBehaviourPun
-	{
-		#region Private Fields
+    #region Private Fields
+    [SerializeField] private CharacterController controller;
+    [SerializeField] private float speed = 8f;
+    [SerializeField] private float gravity = -9.81f;
+    [SerializeField] private float jumpHeight = 2f;
 
-		[SerializeField]
-		private float directionDampTime = 0.25f;
-		Animator animator;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private float groundDistance = 0.4f;
+    [SerializeField] LayerMask groundMask;
 
-		#endregion
+    Vector3 velocity;
+    bool isGrounded;
+    Animator animator;
+    float timeInAir = 0.0f;
+    float timeAfterGround = 0.0f;
+    float waitAfterGround = 0.25f;
 
-		#region MonoBehaviour CallBacks
+    #endregion
 
-		/// <summary>
-		/// MonoBehaviour method called on GameObject by Unity during initialization phase.
-		/// </summary>
-		void Start()
-		{
-			animator = GetComponent<Animator>();
-		}
+    #region MonoBehaviour CallBacks
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
-		/// <summary>
-		/// MonoBehaviour method called on GameObject by Unity on every frame.
-		/// </summary>
-		void Update()
-		{
+    void Update()
+    {
+        // Prevent control is connected to Photon and represent the localPlayer
+        if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
+        {
+            return;
+        }
 
-			// Prevent control is connected to Photon and represent the localPlayer
-			if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
-			{
-				return;
-			}
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        
+        if (isGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f;
+        }
+        //if (isGrounded)
+        //{
+        //    if (x == 0 && z == 0)
+        //    {
+        //        animator.SetBool("StayRotationX", true);
+        //        float mouseX = Input.GetAxis("Mouse X") * 100f * Time.deltaTime;
+        //        animator.SetFloat("VelocityX", mouseX, 0.1f, Time.deltaTime);
+        //    }
+        //    else if (x != 0 || z != 0 || (x != 0 && z != 0))
+        //    {
+        //        animator.SetBool("StayRotationX", false);
+        //        animator.SetFloat("VelocityX", x, 0.1f, Time.deltaTime);
+        //        animator.SetFloat("VelocityZ", z, 0.1f, Time.deltaTime);
+        //    }
+        //}
+        if (isGrounded)
+        {
+            if (x == 0 && z == 0)
+            {
+                float mouseX = Input.GetAxis("Mouse X") * 100f * Time.deltaTime;
+                animator.SetFloat("VelocityX", mouseX, 0.1f, Time.deltaTime);
+                animator.SetFloat("VelocityZ", 0f, 0.1f, Time.deltaTime);
+            }
+            else
+            {
+                animator.SetFloat("VelocityZ", z, 0.1f, Time.deltaTime);
+                animator.SetFloat("VelocityX", x, 0.1f, Time.deltaTime);
+            }
+        }
+        Vector3 move = transform.right * x + transform.forward * z;
+        controller.Move(move * speed * Time.deltaTime);
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
 
-			// failSafe is missing Animator component on GameObject
-			if (!animator)
-			{
-				return;
-			}
-
-			// deal with Jumping
-			AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-
-			// only allow jumping if we are running.
-			if (stateInfo.IsName("Base Layer.Run"))
-			{
-				// When using trigger parameter
-				if (Input.GetButtonDown("Jump")) animator.SetTrigger("Jump");
-			}
-
-			// deal with movement
-			float h = Input.GetAxis("Horizontal");
-			float v = Input.GetAxis("Vertical");
-
-			// prevent negative Speed.
-			if (v < 0)
-			{
-				v = 0;
-			}
-
-			// set the Animator Parameters
-			animator.SetFloat("Speed", h * h + v * v);
-			animator.SetFloat("Direction", h, directionDampTime, Time.deltaTime);
-		}
-
-		#endregion
-
-	}
+        if (Input.GetButtonDown("Jump") && isGrounded && timeAfterGround > waitAfterGround)
+        {
+            timeAfterGround = 0.0f;
+            timeInAir = 0.0f;
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            animator.SetInteger("Jumping", 2);
+        }
+        else if (!isGrounded)
+        {
+            timeInAir += Time.deltaTime;
+            if (timeInAir > 0.5f)
+            {
+                animator.SetInteger("Jumping", 1);
+            }
+        }
+        else
+        {
+            if (timeAfterGround < waitAfterGround)
+            {
+                timeAfterGround += Time.deltaTime;
+            }
+            else
+            {
+                timeAfterGround = waitAfterGround + 0.1f;
+            }
+            timeInAir = 0.0f;
+            animator.SetInteger("Jumping", 0);
+        }
+    }
+    #endregion
 }
