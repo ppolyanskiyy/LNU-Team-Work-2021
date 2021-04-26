@@ -2,12 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class HealthPlayer : MonoBehaviour
 {
     public float currentHealth;
+    public Transform mainCamera;
     public HealthBar healthBar;
+    public Billboard cameraBillboard;
 
-    void playerTakeDamage(float damage)
+    void Start()
+    {
+        healthBar.SetMaxHealth(currentHealth);
+    }
+
+    public void playerTakeDamage(float damage)
     {
         currentHealth -= damage;
 
@@ -15,6 +22,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            cameraBillboard.camera = mainCamera;
             Destroy(gameObject);
         }
     }
