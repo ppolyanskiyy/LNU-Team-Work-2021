@@ -47,16 +47,15 @@ namespace Photon.Pun.Demo.PunBasics
 		
 		// Cache for camera offset
 		Vector3 cameraOffset = Vector3.zero;
-		
-		
-        #endregion
 
-        #region MonoBehaviour Callbacks
+		#endregion
 
-        /// <summary>
-        /// MonoBehaviour method called on GameObject by Unity during initialization phase
-        /// </summary>
-        void Start()
+		#region MonoBehaviour Callbacks
+
+		/// <summary>
+		/// MonoBehaviour method called on GameObject by Unity during initialization phase
+		/// </summary>
+		void Start()
 		{
 			// Start following the target if wanted.
 			if (followOnStart)
@@ -108,10 +107,11 @@ namespace Photon.Pun.Demo.PunBasics
 		{
 			cameraOffset.z = -distance;
 			cameraOffset.y = height;
-			
-		    cameraTransform.position = Vector3.Lerp(cameraTransform.position, this.transform.position +this.transform.TransformVector(cameraOffset), smoothSpeed*Time.deltaTime);
 
-		    cameraTransform.LookAt(this.transform.position + centerOffset);
+			//cameraTransform.position = Vector3.Lerp(cameraTransform.position, this.transform.position + this.transform.TransformVector(cameraOffset), smoothSpeed * Time.deltaTime);
+			cameraTransform.position = this.transform.position + this.transform.TransformVector(cameraOffset);
+
+			cameraTransform.LookAt(this.transform.position + centerOffset);
 		    
 	    }
 

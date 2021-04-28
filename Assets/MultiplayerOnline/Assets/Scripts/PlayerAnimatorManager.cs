@@ -22,6 +22,8 @@ public class PlayerAnimatorManager : MonoBehaviourPun
     float timeAfterGround = 0.0f;
     float waitAfterGround = 0.25f;
 
+
+
     #endregion
 
     #region MonoBehaviour CallBacks

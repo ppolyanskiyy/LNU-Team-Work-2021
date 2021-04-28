@@ -32,7 +32,7 @@ namespace Com.MyCompany.MyGame
 		private GameObject playerPrefab;
 
 		#endregion
-
+		
 		#region MonoBehaviour CallBacks
 
 		/// <summary>
@@ -85,7 +85,7 @@ namespace Com.MyCompany.MyGame
 			// "back" button of phone equals "Escape". quit app if that's pressed
 			if (Input.GetKeyDown(KeyCode.Escape))
 			{
-				Cursor.lockState = CursorLockMode.None;
+				LeaveRoom();
 			}
 		}
 
@@ -144,7 +144,7 @@ namespace Com.MyCompany.MyGame
 
 		public void QuitApplication()
 		{
-			Cursor.lockState = CursorLockMode.None;
+			//Cursor.lockState = CursorLockMode.None;
 		}
 
 		#endregion
