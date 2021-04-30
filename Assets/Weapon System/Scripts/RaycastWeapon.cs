@@ -11,6 +11,7 @@ public class RaycastWeapon : MonoBehaviour
         public Vector3 initialVelocity;
         public TrailRenderer tracer;
     }
+    public float damage = 10f;
     public float bulletSpeed = 1000f;
     public float bulletDrop = 0.0f;
     List<Bullet> bullets = new List<Bullet>();
@@ -90,6 +91,11 @@ public class RaycastWeapon : MonoBehaviour
         if (Physics.Raycast(ray, out hitInfo, distance))
         {
             //Debug.DrawLine(ray.origin, hitInfo.point, Color.red, 1);
+            Target target = hitInfo.transform.GetComponent<Target>();
+            if (target != null)
+            {
+                target.enemiesTakeDamage(damage);
+            }
 
             hitEffect.transform.position = hitInfo.point;
             hitEffect.transform.forward = hitInfo.normal;

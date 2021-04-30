@@ -2,17 +2,12 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    public HealthBar healthBarEnemies;
-
-    public MoveWall firstFurnace;
-    public MoveWall secondFurnace;
-    public MoveWall thirdFurnace;
-    
+    //public HealthBar healthBarEnemies;
 
     public float currentHealth;
     void Start()
     {
-        healthBarEnemies.SetMaxHealth(currentHealth);
+        //healthBarEnemies.SetMaxHealth(currentHealth);
         Debug.Log("Start");
     }
 
@@ -20,15 +15,10 @@ public class Target : MonoBehaviour
     {
         currentHealth -= damage;
 
-        healthBarEnemies.SetHealth(currentHealth);
+        //healthBarEnemies.SetHealth(currentHealth);
 
         if (currentHealth <= 0f)
         {
-
-            firstFurnace.Move();
-            secondFurnace.Move();
-            thirdFurnace.Move();
-
             Destroy(gameObject);
         }
     }
