@@ -235,7 +235,7 @@ MonoBehaviour:
   raycastOrigin: {fileID: 1042934546}
   raycastDestination: {fileID: 1129890386}
   hitEffect: {fileID: 1624333337}
-  tracerEffect: {fileID: 3445702133868098568, guid: c6ede6078a85c8849875e093a3c94556, type: 3}
+  tracerEffect: {fileID: 3445702133868098568, guid: 62359c89d6a32354eb15d059aefda071, type: 3}
 --- !u!1 &218245308
 GameObject:
   m_ObjectHideFlags: 0
