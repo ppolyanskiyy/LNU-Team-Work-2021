@@ -27443,7 +27443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fff7b1099440de4f981a05c720d6aa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSpeed: 15
+  turnSpeed: 50
   aimLayer: {fileID: 1144266609}
 --- !u!114 &4389195773120103323
 MonoBehaviour:
