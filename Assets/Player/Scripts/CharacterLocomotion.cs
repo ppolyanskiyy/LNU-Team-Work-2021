@@ -65,6 +65,7 @@ public class CharacterLocomotion : MonoBehaviour
             isJumping = true;
             velocity = animator.velocity * jumpDamp * speed;
             velocity.y = 0;
+            animator.SetBool("isJumping", true);
         }
     }
 
@@ -76,6 +77,7 @@ public class CharacterLocomotion : MonoBehaviour
         controller.Move(displacement);
         isJumping = !controller.isGrounded;
         rootMotion = Vector3.zero;
+        animator.SetBool("isJumping", isJumping);
     }
 
     void Jump()
@@ -85,6 +87,7 @@ public class CharacterLocomotion : MonoBehaviour
             isJumping = true;
             velocity = animator.velocity * jumpDamp;
             velocity.y = Mathf.Sqrt(2 * gravity * jumpHeight);
+            animator.SetBool("isJumping", true);
         }
     }
     Vector3 AirControl()
