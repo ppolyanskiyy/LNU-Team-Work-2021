@@ -9373,16 +9373,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d513ea8a81028c41a4e25d2de5097ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 5
   bulletSpeed: 100
   bulletDrop: 5
   isFiring: 0
-  fireRate: 10
+  fireRate: 15
   muzzleFlash: {fileID: 5931113268606338726}
   raycastOrigin: {fileID: 5805079451791815152}
   raycastDestination: {fileID: 0}
   hitEffect: {fileID: 5805079452547335931}
   tracerEffect: {fileID: 3445702133868098568, guid: c6ede6078a85c8849875e093a3c94556, type: 3}
+  weaponAnimation: {fileID: 7400000, guid: dd1aa38643054274e8e9d8522f3ad897, type: 2}
 --- !u!1 &5805079451688715710
 GameObject:
   m_ObjectHideFlags: 0

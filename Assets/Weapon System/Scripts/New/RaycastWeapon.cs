@@ -11,11 +11,19 @@ public class RaycastWeapon : MonoBehaviour
         public Vector3 initialVelocity;
         public TrailRenderer tracer;
     }
+
     public float damage = 10f;
     public float bulletSpeed = 1000f;
     public float bulletDrop = 0.0f;
-    List<Bullet> bullets = new List<Bullet>();
-    float maxLifeTime = 3.0f;
+    public bool isFiring = false;
+    public float fireRate = 10f; // bullets per second
+    public ParticleSystem muzzleFlash;
+    public Transform raycastOrigin;
+    public Transform raycastDestination;
+    public ParticleSystem hitEffect;
+    public TrailRenderer tracerEffect;
+    public AnimationClip weaponAnimation;
+    
     Vector3 GetPosition(Bullet bullet)
     {
         Vector3 gravity = Vector3.down * bulletDrop;
@@ -32,14 +40,8 @@ public class RaycastWeapon : MonoBehaviour
         return bullet;
     }
 
-    public bool isFiring = false;
-    public float fireRate = 10f; // bullets per second
-    public ParticleSystem muzzleFlash;
-    public Transform raycastOrigin;
-    public Transform raycastDestination;
-    public ParticleSystem hitEffect;
-    public TrailRenderer tracerEffect;
-
+    List<Bullet> bullets = new List<Bullet>();
+    float maxLifeTime = 3.0f;
     Ray ray;
     RaycastHit hitInfo;
     float accumulatedTime;
