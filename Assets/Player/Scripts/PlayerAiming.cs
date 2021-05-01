@@ -12,14 +12,14 @@ public class PlayerAiming : MonoBehaviour
     float timeAfterFire;
     Camera mainCamera;
     float aimDuration = 0.2f;
-    RaycastWeapon weapon;
+    
 
     void Start()
     {
-        timeAfterFire = 0f;
+        timeAfterFire = 2f;
         mainCamera = Camera.main;
         Cursor.lockState = CursorLockMode.Locked;
-        weapon = GetComponentInChildren<RaycastWeapon>();
+        
     }
     
     void FixedUpdate()
@@ -28,39 +28,58 @@ public class PlayerAiming : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation,
             Quaternion.Euler(0, yawCamera, 0), turnSpeed * Time.deltaTime);
     }
-    private void Update()
+    private void LateUpdate()
     {
-        if (timeAfterFire > waitAfterFire)
+        if (aimLayer)
         {
-            timeAfterFire = waitAfterFire;
+            aimLayer.weight = 1.0f;
         }
-        if (Input.GetMouseButton(1) || Input.GetMouseButton(0))
-        {
-            aimLayer.weight += Time.deltaTime / aimDuration;
-        }
-        else if (timeAfterFire >= waitAfterFire)
-        {
-            aimLayer.weight -= Time.deltaTime / aimDuration;
-        }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            weapon.StartFiring();
-        }
-        if (weapon.isFiring)
-        {
-            weapon.UpdateFiring(Time.deltaTime);
-        }
-        else
-        {
-            timeAfterFire += Time.deltaTime;
-        }
-        weapon.UpdateBullets(Time.deltaTime);
-        if (Input.GetMouseButtonUp(0))
-        {
-            timeAfterFire = 0f;
-            weapon.StopFiring();
-        }
-        Debug.Log(timeAfterFire);
+        //if (timeAfterFire > waitAfterFire)
+        //{
+        //    timeAfterFire = waitAfterFire;
+        //}
+        //if (Input.GetMouseButton(1) || Input.GetMouseButton(0))
+        //{
+        //    aimLayer.weight += Time.deltaTime / aimDuration;
+        //}
+        //else if (timeAfterFire >= waitAfterFire)
+        //{
+        //    aimLayer.weight -= Time.deltaTime / aimDuration;
+        //}
     }
+
+    //private void LateUpdate()
+    //{
+    //    if (timeAfterFire > waitAfterFire)
+    //    {
+    //        timeAfterFire = waitAfterFire;
+    //    }
+    //    if (Input.GetMouseButton(1) || Input.GetMouseButton(0))
+    //    {
+    //        aimLayer.weight += Time.deltaTime / aimDuration;
+    //    }
+    //    else if (timeAfterFire >= waitAfterFire)
+    //    {
+    //        aimLayer.weight -= Time.deltaTime / aimDuration;
+    //    }
+
+    //    if (Input.GetMouseButtonDown(0))
+    //    {
+    //        weapon.StartFiring();
+    //    }
+    //    if (weapon.isFiring)
+    //    {
+    //        weapon.UpdateFiring(Time.deltaTime);
+    //    }
+    //    else
+    //    {
+    //        timeAfterFire += Time.deltaTime;
+    //    }
+    //    weapon.UpdateBullets(Time.deltaTime);
+    //    if (Input.GetMouseButtonUp(0))
+    //    {
+    //        timeAfterFire = 0f;
+    //        weapon.StopFiring();
+    //    }
+    //}
 }
