@@ -38,6 +38,7 @@ public class RaycastWeapon : MonoBehaviour
     public Transform raycastDestination;
     public ParticleSystem hitEffect;
     public TrailRenderer tracerEffect;
+    public float damage;
 
     Ray ray;
     RaycastHit hitInfo;
@@ -90,6 +91,11 @@ public class RaycastWeapon : MonoBehaviour
         if (Physics.Raycast(ray, out hitInfo, distance))
         {
             //Debug.DrawLine(ray.origin, hitInfo.point, Color.red, 1);
+            Target target = hitInfo.transform.GetComponent<Target>();
+            if (target != null)
+            {
+                target.enemiesTakeDamage(damage);
+            }
 
             hitEffect.transform.position = hitInfo.point;
             hitEffect.transform.forward = hitInfo.normal;
