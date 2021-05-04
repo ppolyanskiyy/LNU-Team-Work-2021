@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class HealthPlayer : MonoBehaviour
 {
-    public float currentHealth;
-    public HealthBar healthBar;
+    [SerializeField] float currentHealth;
+    [SerializeField] SliderBar healthBar;
+
 
     void playerTakeDamage(float damage)
     {
         currentHealth -= damage;
-
-        healthBar.SetHealth(currentHealth);
+        healthBar.SetCurrent(currentHealth);
 
         if (currentHealth <= 0)
         {

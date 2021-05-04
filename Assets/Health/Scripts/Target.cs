@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    //public HealthBar healthBarEnemies;
+    public SliderBar healthBarEnemies;
+    
 
     public float currentHealth;
     void Start()
     {
-        //healthBarEnemies.SetMaxHealth(currentHealth);
+        healthBarEnemies.SetMax(currentHealth);
         Debug.Log("Start");
     }
 
@@ -15,7 +16,7 @@ public class Target : MonoBehaviour
     {
         currentHealth -= damage;
 
-        //healthBarEnemies.SetHealth(currentHealth);
+        healthBarEnemies.SetCurrent(currentHealth);
 
         if (currentHealth <= 0f)
         {
