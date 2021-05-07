@@ -8,7 +8,7 @@ public class HealthPlayer : MonoBehaviour
     [SerializeField] SliderBar healthBar;
 
 
-    void playerTakeDamage(float damage)
+    public void playerTakeDamage(float damage)
     {
         currentHealth -= damage;
         healthBar.SetCurrent(currentHealth);
