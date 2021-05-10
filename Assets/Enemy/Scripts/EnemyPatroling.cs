@@ -12,6 +12,7 @@ public class EnemyPatroling : MonoBehaviour
     public Transform player;
     public LayerMask whatIsGround, whatIsPlayer;
     public HealthPlayer health;
+    public EnemyActive active;
     public float enemyDamage;
 
     //Patroling
@@ -47,9 +48,7 @@ public class EnemyPatroling : MonoBehaviour
 
         if (!playerInSightRange && !playerInAttackRange) Patroling();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
-        if (playerInAttackRange && playerInSightRange) AttackPlayer();
-
-        
+        if (playerInAttackRange && playerInSightRange) AttackPlayer(); 
     }
 
     private void Patroling()
@@ -62,7 +61,6 @@ public class EnemyPatroling : MonoBehaviour
             agent.SetDestination(walkPoint);
             walkPointSet = false;
         }
-        //agent.Resume();
         animator.SetFloat("VelocityZ", 1f, 0.1f, Time.deltaTime);
     }
     private void SearchWalkPoint()
@@ -85,6 +83,7 @@ public class EnemyPatroling : MonoBehaviour
 
     private void ChasePlayer()
     {
+        active.StopAttack();
         agent.Resume();
         agent.SetDestination(player.position);
         agent.speed = speedEnemie;
@@ -93,21 +92,13 @@ public class EnemyPatroling : MonoBehaviour
 
     private void AttackPlayer()
     {
-        
+
+        transform.LookAt(player);
         agent.SetDestination(player.position);
         agent.Stop();
         animator.SetFloat("VelocityZ", 0f, 0.1f, Time.deltaTime);
-        //transform.LookAt(player);
 
-        //if (!alreadyAttacked && Physics.CheckSphere(transform.position, damageRange, whatIsPlayer))
-        //{
-        //    Rigidbody rb = projectile.GetComponent<Rigidbody>();
-        //    rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-        //    rb.AddForce(transform.up * 8f, ForceMode.Impulse);
-
-        //    alreadyAttacked = true;
-        //    Invoke(nameof(ResetAttack), timeBetweenAttacks);
-        //}
+        active.Fire();
     }
     private void ResetAttack()
     {
