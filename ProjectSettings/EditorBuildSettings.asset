@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/EnemyAi (Project file) woLibrary/Assets/Scenes/SingleTap,DoubleTap,KeyHold.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Test Room/FirstLevel_WeaponUpgrade.unity
+    guid: c3af84267b61d7046bd7016f8c0b68b2
   m_configObjects: {}
