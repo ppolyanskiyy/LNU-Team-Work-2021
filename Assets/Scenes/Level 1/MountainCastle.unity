@@ -16363,7 +16363,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 471173991}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2102162443}
@@ -43441,7 +43441,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1066754205}
-  m_LocalRotation: {x: 0.121101454, y: 0.000000008539873, z: -0.000000001041859, w: 0.99264014}
+  m_LocalRotation: {x: 0.121101454, y: 0.000000008539871, z: -0.0000000010418588, w: 0.99264014}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -47669,7 +47669,7 @@ CharacterController:
   m_Height: 1.8
   m_Radius: 0.3
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 1
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0.95, z: 0}
@@ -47769,7 +47769,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1211053784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 208.79, y: 10.97, z: 288.79}
+  m_LocalPosition: {x: 199.8, y: 10.97, z: 347.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 354408745}
@@ -50139,15 +50139,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e466d392725b68141a1506f2c027e430, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 189.45
+      value: 189.27
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e466d392725b68141a1506f2c027e430, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.71
+      value: 14.77
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e466d392725b68141a1506f2c027e430, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 267.52
+      value: 267.57
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e466d392725b68141a1506f2c027e430, type: 3}
       propertyPath: m_LocalRotation.w
@@ -50254,12 +50254,12 @@ MonoBehaviour:
   enemyDamage: 10
   walkPoint: {x: 0, y: 0, z: 0}
   speedEnemie: 5
-  patrolingToPointX: 177.94
-  patrolingToPointZ: 277.26
+  patrolingToPointX: 199.87
+  patrolingToPointZ: 289.32
   timeBetweenAttacks: 0
   projectile: {fileID: 1211053784}
-  sightRange: 15
-  attackRange: 7
+  sightRange: 30
+  attackRange: 25
   damageRange: 3
 --- !u!195 &1266664106
 NavMeshAgent:
@@ -62976,7 +62976,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1635024755}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 208.79, y: 13.47, z: 285.79}
+  m_LocalPosition: {x: 199.8, y: 13.47, z: 344.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1678729565}
@@ -64594,7 +64594,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1678729563}
-  m_LocalRotation: {x: 0.13913703, y: 0.000000008519508, z: -0.0000000011970223, w: 0.9902732}
+  m_LocalRotation: {x: 0.13913703, y: -0.000000008519508, z: 0.0000000011970223, w: 0.9902732}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -79082,7 +79082,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2102162442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.041, y: -0.105, z: -0.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2069750751}
