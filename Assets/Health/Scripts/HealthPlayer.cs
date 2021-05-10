@@ -22,6 +22,7 @@ public class HealthPlayer : MonoBehaviour
         if (currentHealth <= 0)
         {
             var billboards = new List<GameObject>(GameObject.FindGameObjectsWithTag("Billboard"));
+            //mainCamera.SetActive;
             foreach (var item in billboards)
                 item.GetComponent<Billboard>().cam = mainCamera;
 
