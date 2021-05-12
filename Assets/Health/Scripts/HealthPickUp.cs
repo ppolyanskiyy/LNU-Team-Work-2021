@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class HealthPickUp : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private bool playerInSightRange;
+    public LayerMask whatIsPlayer;
+    public float sightRange;
+    public HealthPlayer healthPlayer;
+    //[SerializeField] GameObject burst;
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+        if (playerInSightRange)
+        {
+            RaiseHP();
+        }
+    }
+
+    public void RaiseHP()
+    {
+        healthPlayer.RaiseHP(50);
+        //Instantiate(burst, transform.position, Quaternion.LookRotation(transform.position));
+        //burst.SetActive(false);
+        Destroy(gameObject);
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, sightRange);
     }
 }

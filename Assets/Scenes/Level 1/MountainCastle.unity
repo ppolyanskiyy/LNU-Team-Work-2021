@@ -50427,7 +50427,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1066754205}
-  m_LocalRotation: {x: 0.121101454, y: -0.000000008539871, z: 0.0000000010418588, w: 0.99264014}
+  m_LocalRotation: {x: 0.121101454, y: 0.000000008539871, z: -0.0000000010418588, w: 0.99264014}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -55138,7 +55138,7 @@ MonoBehaviour:
   maxMana: 100
   manaBar: {fileID: 1597496397}
   plazmaBurst: {fileID: 4999360924277247100, guid: d8f5071190b4d5941b88720288669b8d, type: 3}
-  lenghtSpherePlazma: 7
+  lenghtSpherePlazma: 15
   damage: 50
 --- !u!114 &1211053786
 MonoBehaviour:
@@ -55241,7 +55241,7 @@ MonoBehaviour:
   stepDown: 0.1
   airControl: 2.5
   jumpDamp: 0.8
-  speed: 5
+  speed: 1.5
 --- !u!95 &1211053792
 Animator:
   serializedVersion: 3
@@ -62734,6 +62734,28 @@ Transform:
   m_Father: {fileID: 870307455}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1386214355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 116122, guid: 2ce589b8c3935da4280392ae41a2f742, type: 3}
+  m_PrefabInstance: {fileID: 1487432933}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1386214359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386214355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b5cca0feab4d3b44b7d25aaeb40cadb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 128
+  sightRange: 2
+  healthPlayer: {fileID: 1211053786}
 --- !u!4 &1388758625 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 480d29c512ed7c94c84fd730bfb23246, type: 3}
@@ -67032,6 +67054,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health Pickup (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 116122, guid: 2ce589b8c3935da4280392ae41a2f742, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 454304, guid: 2ce589b8c3935da4280392ae41a2f742, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.75833666
@@ -67070,15 +67096,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 459172, guid: 2ce589b8c3935da4280392ae41a2f742, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.072845
+      value: -8.45
       objectReference: {fileID: 0}
     - target: {fileID: 459172, guid: 2ce589b8c3935da4280392ae41a2f742, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.2593145
+      value: -8.3
       objectReference: {fileID: 0}
     - target: {fileID: 459172, guid: 2ce589b8c3935da4280392ae41a2f742, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 241.14851
+      value: 241.29
       objectReference: {fileID: 0}
     - target: {fileID: 459172, guid: 2ce589b8c3935da4280392ae41a2f742, type: 3}
       propertyPath: m_LocalRotation.w
@@ -90638,7 +90664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
-  bulletSpeed: 8
+  bulletSpeed: 30
   bulletDrop: 0.1
   isFiring: 0
   fireRate: 5

@@ -13,6 +13,21 @@ public class HealthPlayer : MonoBehaviour
         healthBar.SetMax(currentHealth);
     }
 
+    public void RaiseHP(float hp)
+    {
+        if (currentHealth + hp >= 100)
+        {
+            currentHealth = 100;
+            healthBar.SetCurrent(currentHealth);
+        }
+        else
+        {
+            currentHealth += hp;
+            healthBar.SetCurrent(currentHealth);
+        }
+
+    }
+
     public void playerTakeDamage(float damage)
     {
         currentHealth -= damage;
