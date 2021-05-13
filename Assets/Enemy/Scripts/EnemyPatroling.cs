@@ -72,7 +72,7 @@ public class EnemyPatroling : MonoBehaviour
 
         if (transform.position.x == patrolingToPointX && patrolingToPointZ == transform.position.z)
         {
-            walkPoint = new Vector3(a.x, transform.position.y, a.z);
+            walkPoint = new Vector3(a.x, a.y, a.z);
         }
         else if (transform.position.x == a.x && a.z == transform.position.z)
         {
