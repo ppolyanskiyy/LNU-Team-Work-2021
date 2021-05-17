@@ -11,11 +11,13 @@ public class ManaPlayer : MonoBehaviour
     [SerializeField] float lenghtSpherePlazma;
     [SerializeField] float damage;
     List<GameObject> enemyes;
+    private AudioSource audioBurst;
 
     void Start()
     {
         manaBar.SetMax(maxMana);
         manaBar.SetCurrent(currentMana);
+        audioBurst = GetComponent<AudioSource>();
     }
     
     private void Update()
@@ -28,6 +30,7 @@ public class ManaPlayer : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Q) && currentMana >= 100)
         {
+            audioBurst.Play();
             Instantiate(plazmaBurst, transform.position, Quaternion.LookRotation(transform.position));
             currentMana = 0;
             manaBar.SetCurrent(currentMana);
