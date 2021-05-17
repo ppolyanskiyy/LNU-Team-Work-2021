@@ -6,11 +6,12 @@ public class HealthPlayer : MonoBehaviour
 {
     [SerializeField] float currentHealth;
     [SerializeField] SliderBar healthBar;
-    [SerializeField] Transform mainCamera;
+    [SerializeField] GameObject looseScene;
 
     void Start()
     {
         healthBar.SetMax(currentHealth);
+
     }
 
     public void RaiseHP(float hp)
@@ -36,14 +37,8 @@ public class HealthPlayer : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            var billboards = new List<GameObject>(GameObject.FindGameObjectsWithTag("Billboard"));
-            //mainCamera.SetActive;
-            foreach (var item in billboards)
-                item.GetComponent<Billboard>().cam = mainCamera;
-
-            var mainCameraTags = new List<GameObject>(GameObject.FindGameObjectsWithTag("MainCamera"));
-            foreach (var item in mainCameraTags)
-                Destroy(item);
+            if (!looseScene.activeSelf)
+                looseScene.SetActive(true);
 
             Destroy(gameObject);
         }

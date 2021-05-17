@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    public SliderBar healthBarEnemies;
-    
+    [SerializeField] SliderBar healthBarEnemies;
+    [SerializeField] GameObject burst;
+
 
     public float currentHealth;
     void Start()
@@ -20,6 +21,7 @@ public class Target : MonoBehaviour
 
         if (currentHealth <= 0f)
         {
+            Instantiate(burst, transform.position, Quaternion.LookRotation(transform.position));
             Destroy(gameObject);
         }
     }
