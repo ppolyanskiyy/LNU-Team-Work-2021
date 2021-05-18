@@ -6,9 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/UI/Menu.unity
+    path: Assets/Scenes/MainMenu/MainMenu.unity
     guid: 49ee23ec61910664885cfde76232c69c
   - enabled: 1
-    path: Assets/Scenes/FirstLevel.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/LevelChoose/LevelChoose.unity
+    guid: b64d502b4facab548b8924b9316d30d9
+  - enabled: 1
+    path: Assets/Scenes/Level 1/MountainCastle.unity
+    guid: a08fed32c1937e245910d0174f514778
+  - enabled: 1
+    path: Assets/Scenes/Level 2/Level2.unity
+    guid: bc5ad10c63d973e418a48d4f24601e89
+  - enabled: 1
+    path: Assets/Scenes/WhatsNew/WhatsNew.unity
+    guid: 01e3de3d18f13014ba3e62b1fc5716bd
+  - enabled: 1
+    path: Assets/MultiplayerOnline/Assets/Scenes/destroyed_city.unity
+    guid: dab52a771d551ca40930496e8e13757a
+  - enabled: 1
+    path: Assets/MultiplayerOnline/Assets/Scenes/Launcher.unity
+    guid: 71f2239b4531cd145b51341678aab84c
   m_configObjects: {}

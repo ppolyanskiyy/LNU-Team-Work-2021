@@ -83,7 +83,7 @@ public class Gun : MonoBehaviour
             Target target = hit.transform.GetComponent<Target>();
             if (target != null)
             {
-                target.TakeDamage(damage);
+                target.enemiesTakeDamage(damage);
             }
 
             if (hit.rigidbody != null)
