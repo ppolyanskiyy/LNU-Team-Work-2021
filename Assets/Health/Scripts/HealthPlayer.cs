@@ -11,7 +11,6 @@ public class HealthPlayer : MonoBehaviour
     void Start()
     {
         healthBar.SetMax(currentHealth);
-
     }
 
     public void RaiseHP(float hp)
@@ -37,6 +36,14 @@ public class HealthPlayer : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            var enemyes = new List<GameObject>(GameObject.FindGameObjectsWithTag("Target"));
+            foreach (var item in enemyes)
+            {
+                //var a = item.GetComponent<Canvas>();
+                //var a2 = a.GetComponent<Billboard>();
+                //a2.NewCamera();
+                item.SetActive(false);
+            }
             if (!looseScene.activeSelf)
                 looseScene.SetActive(true);
 
