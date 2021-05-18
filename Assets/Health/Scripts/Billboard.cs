@@ -5,8 +5,13 @@ using UnityEngine;
 public class Billboard : MonoBehaviour
 {
     public Transform cam;
+    [SerializeField] Transform thing;
     void LateUpdate()
     {
         transform.LookAt(transform.position + cam.forward);
+    }
+    public void NewCamera()
+    {
+        cam = thing;
     }
 }
