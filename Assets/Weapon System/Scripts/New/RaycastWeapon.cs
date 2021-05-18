@@ -23,7 +23,12 @@ public class RaycastWeapon : MonoBehaviour
     public ParticleSystem hitEffect;
     public TrailRenderer tracerEffect;
     public AnimationClip weaponAnimation;
-    
+    private AudioSource audioShoot;
+
+    void Start()
+    {
+        audioShoot = GetComponent<AudioSource>();
+    }
     Vector3 GetPosition(Bullet bullet)
     {
         Vector3 gravity = Vector3.down * bulletDrop;
@@ -116,27 +121,10 @@ public class RaycastWeapon : MonoBehaviour
     {
         muzzleFlash.Emit(1);
 
+        audioShoot.Play();
         Vector3 velocity = (raycastDestination.position - raycastOrigin.position).normalized * bulletSpeed;
         var bullet = CreateBullet(raycastOrigin.position, velocity);
         bullets.Add(bullet);
-
-        //ray.origin = raycastOrigin.position;
-
-        ////ray.direction = raycastOrigin.forward;
-        //ray.direction = raycastDestination.position - raycastOrigin.position;
-
-        //var tracer = Instantiate(tracerEffect, ray.origin, Quaternion.identity);
-        //tracer.AddPosition(ray.origin);
-        //if (Physics.Raycast(ray, out hitInfo))
-        //{
-        //    //Debug.DrawLine(ray.origin, hitInfo.point, Color.red, 1);
-
-        //    hitEffect.transform.position = hitInfo.point;
-        //    hitEffect.transform.forward = hitInfo.normal;
-        //    hitEffect.Emit(1);
-
-        //    tracer.transform.position = hitInfo.point;
-        //}
     }
 
     public void StopFiring()

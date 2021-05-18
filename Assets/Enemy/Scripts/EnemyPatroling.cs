@@ -17,7 +17,7 @@ public class EnemyPatroling : MonoBehaviour
 
     //Patroling
     public Vector3 walkPoint;
-    bool walkPointSet;
+    bool walkPointSet = false;
     [SerializeField] private float speedEnemie;
     //public float walkPointRange;
     private Vector3 a;
@@ -27,7 +27,7 @@ public class EnemyPatroling : MonoBehaviour
     //Attacking
     public float timeBetweenAttacks;
     bool alreadyAttacked;
-    public GameObject projectile;
+    //public GameObject projectile;
 
     //States
     public float sightRange, attackRange, damageRange;
@@ -46,12 +46,12 @@ public class EnemyPatroling : MonoBehaviour
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        if (!playerInSightRange && !playerInAttackRange) Patroling();
+        //if (!playerInSightRange && !playerInAttackRange) Patroling();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInAttackRange && playerInSightRange) AttackPlayer(); 
     }
 
-    private void Patroling()
+    /*private void Patroling()
     {
         agent.Resume();
         if (!walkPointSet) SearchWalkPoint();
@@ -79,10 +79,11 @@ public class EnemyPatroling : MonoBehaviour
             walkPoint = new Vector3(patrolingToPointX, transform.position.y, patrolingToPointZ);
         }
         walkPointSet = true;
-    }
+    }*/
 
     private void ChasePlayer()
     {
+        sightRange = 1000f;
         active.StopAttack();
         agent.Resume();
         agent.SetDestination(player.position);

@@ -5,10 +5,10 @@ using UnityEngine;
 public class HealthPickUp : MonoBehaviour
 {
     private bool playerInSightRange;
-    public LayerMask whatIsPlayer;
-    public float sightRange;
-    public HealthPlayer healthPlayer;
-    //[SerializeField] GameObject burst;
+    [SerializeField] LayerMask whatIsPlayer;
+    [SerializeField] float sightRange;
+    [SerializeField] HealthPlayer healthPlayer;
+    [SerializeField] GameObject burst;
 
 
     void Update()
@@ -23,8 +23,7 @@ public class HealthPickUp : MonoBehaviour
     public void RaiseHP()
     {
         healthPlayer.RaiseHP(50);
-        //Instantiate(burst, transform.position, Quaternion.LookRotation(transform.position));
-        //burst.SetActive(false);
+        Instantiate(burst, transform.position, Quaternion.LookRotation(transform.position));
         Destroy(gameObject);
     }
     private void OnDrawGizmosSelected()
