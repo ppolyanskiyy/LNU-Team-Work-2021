@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerCheeps : MonoBehaviour
 {
@@ -9,12 +10,20 @@ public class PlayerCheeps : MonoBehaviour
     [SerializeField] TextMeshProUGUI textCheeps;
     [SerializeField] MoveWall wall;
 
+
     private void Update()
     {
-        if (cheeps == 2)
+        if (SceneManager.GetActiveScene().name == "MountainCastle")
         {
-            wall.Move();
+            if (cheeps == 2)
+            {
+                wall.Move();
+            }
         }
+        //else if (SceneManager.GetActiveScene().name == "Level2")
+        //{
+
+        //}
     }
     public void AmountCheeps()
     {
