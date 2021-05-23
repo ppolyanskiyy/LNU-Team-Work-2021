@@ -9375,8 +9375,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
-  bulletSpeed: 100
-  bulletDrop: 7
+  bulletSpeed: 500
+  bulletDrop: 15
   isFiring: 0
   fireRate: 2
   muzzleFlash: {fileID: 5931113268606338726}

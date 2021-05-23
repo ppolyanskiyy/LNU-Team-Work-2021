@@ -9,6 +9,7 @@ public class PlayerCheeps : MonoBehaviour
     private float cheeps = 0;
     [SerializeField] TextMeshProUGUI textCheeps;
     [SerializeField] MoveWall wall;
+    [SerializeField] string nameScene;
 
 
     private void Update()
@@ -20,10 +21,10 @@ public class PlayerCheeps : MonoBehaviour
                 wall.Move();
             }
         }
-        //else if (SceneManager.GetActiveScene().name == "Level2")
-        //{
-
-        //}
+        if(cheeps == 3)
+        {
+            SceneManager.LoadScene(nameScene);
+        }
     }
     public void AmountCheeps()
     {

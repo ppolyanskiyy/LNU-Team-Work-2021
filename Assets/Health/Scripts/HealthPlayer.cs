@@ -44,6 +44,8 @@ public class HealthPlayer : MonoBehaviour
                 //a2.NewCamera();
                 item.SetActive(false);
             }
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
             if (!looseScene.activeSelf)
                 looseScene.SetActive(true);
 
