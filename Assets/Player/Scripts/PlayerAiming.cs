@@ -25,15 +25,13 @@ public class PlayerAiming : MonoBehaviour
     {
         if (!Input.GetMouseButton(1))
         {
-            headAimLayer.weight = 1f;
             float yawCamera = mainCamera.transform.rotation.eulerAngles.y;
             transform.rotation = Quaternion.Slerp(transform.rotation,
                 Quaternion.Euler(0, yawCamera, 0), turnSpeed * Time.deltaTime);
+            headAimLayer.weight = 1f;
         }
         else
-        {
             headAimLayer.weight = 0f;
-        }    
     }
     private void LateUpdate()
     {
