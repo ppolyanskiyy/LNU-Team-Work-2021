@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.Animations;
+//using UnityEditor.Animations;
 
 public class ActiveWeapon : MonoBehaviour
 {
@@ -72,14 +72,14 @@ public class ActiveWeapon : MonoBehaviour
         overrides["empty_anim"] = weapon.weaponAnimation;
     }
 
-    [ContextMenu("Save weapon pose")] // this attribute means that we can call this function (SaveWeaponPose) from the editor
-    void SaveWeaponPose()
-    {
-        var recorder = new GameObjectRecorder(gameObject); // gameObject is our character
-        recorder.BindComponentsOfType<Transform>(weaponParent.gameObject, false);
-        recorder.BindComponentsOfType<Transform>(weaponLeftHandGrip.gameObject, false);
-        recorder.BindComponentsOfType<Transform>(weaponRightHandGrip.gameObject, false);
-        recorder.TakeSnapshot(0.0f);
-        recorder.SaveToClip(weapon.weaponAnimation);
-    }
+    //[ContextMenu("Save weapon pose")] // this attribute means that we can call this function (SaveWeaponPose) from the editor
+    //void SaveWeaponPose()
+    //{
+    //    var recorder = new GameObjectRecorder(gameObject); // gameObject is our character
+    //    recorder.BindComponentsOfType<Transform>(weaponParent.gameObject, false);
+    //    recorder.BindComponentsOfType<Transform>(weaponLeftHandGrip.gameObject, false);
+    //    recorder.BindComponentsOfType<Transform>(weaponRightHandGrip.gameObject, false);
+    //    recorder.TakeSnapshot(0.0f);
+    //    recorder.SaveToClip(weapon.weaponAnimation);
+    //}
 }
