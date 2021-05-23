@@ -9374,11 +9374,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d513ea8a81028c41a4e25d2de5097ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 8
   bulletSpeed: 100
-  bulletDrop: 5
+  bulletDrop: 7
   isFiring: 0
-  fireRate: 8
+  fireRate: 7
   muzzleFlash: {fileID: 5931113268606338726}
   raycastOrigin: {fileID: 5805079451791815152}
   raycastDestination: {fileID: 0}
