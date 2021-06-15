@@ -14,7 +14,7 @@ public class ChooseMap : MonoBehaviour
     {
         levelComplete = PlayerPrefs.GetInt("levelComplete");
         map1.interactable = true;
-        map2.interactable = false;
+        map2.interactable = true;
 
         switch (levelComplete)
         {
