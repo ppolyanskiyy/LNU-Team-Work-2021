@@ -37,11 +37,13 @@ public class HealthPlayer : MonoBehaviour
         if (currentHealth <= 0)
         {
             var enemyes = new List<GameObject>(GameObject.FindGameObjectsWithTag("Target"));
+            var pickups = new List<GameObject>(GameObject.FindGameObjectsWithTag("Pickup"));
             foreach (var item in enemyes)
             {
-                //var a = item.GetComponent<Canvas>();
-                //var a2 = a.GetComponent<Billboard>();
-                //a2.NewCamera();
+                item.SetActive(false);
+            }
+            foreach (var item in pickups)
+            {
                 item.SetActive(false);
             }
             Cursor.lockState = CursorLockMode.Confined;
